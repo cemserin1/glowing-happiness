@@ -17,7 +17,7 @@ deploy:
   bucket_name: "elasticbeanstalk-eu-central-1-127748698469"
   bucket_path: "glowing-happiness"
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: 
     secure: "$AWS_SECRET_KEY"
