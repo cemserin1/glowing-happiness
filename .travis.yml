@@ -8,3 +8,16 @@ before_install:
 
 script:
   - docker run -e CI=true glowing-happiness npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "glowing-happiness"
+  env: "Glowinghappiness-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-127748698469"
+  bucket_path: "glowing-happiness"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
